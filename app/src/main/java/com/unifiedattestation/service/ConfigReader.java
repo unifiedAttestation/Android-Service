@@ -28,11 +28,6 @@ public class ConfigReader {
         } catch (Exception ignored) {
         }
 
-        XmlResourceParser parser = context.getResources().getXml(R.xml.unifiedattestation);
-        try {
-            parseXml(parser, urls);
-        } catch (Exception ignored) {
-        }
         return urls;
     }
 

@@ -4,10 +4,9 @@
 Privileged system service that performs KeyMint attestation and calls the backend. Apps never see the certificate chain.
 
 ## Config
-- Default backend URLs are read from `/product/etc/unifiedattestation.xml`.
-- Fallback resource: `Android-Service/app/src/main/res/xml/unifiedattestation.xml`.
+- Default backend URLs are read from `/product/etc/unifiedattestation.xml` (OEM-provided).
 
-Sample XML:
+Sample XML (in `/product/etc/unifiedattestation.xml`):
 ```xml
 <backends>
   <backend url="http://localhost:3001" />

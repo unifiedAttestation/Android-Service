@@ -145,11 +145,20 @@ public class MainActivity extends AppCompatActivity {
             renderBackends();
         });
 
+        Button remove = new Button(this);
+        remove.setText("Remove");
+        remove.setOnClickListener(v -> {
+            backends.remove(entry);
+            BackendStore.save(this, backends);
+            renderBackends();
+        });
+
         Button check = new Button(this);
         check.setText("Sanity Check");
         check.setOnClickListener(v -> runSanityCheck(entry));
 
         actions.addView(toggle);
+        actions.addView(remove);
         actions.addView(check);
 
         row.addView(title);

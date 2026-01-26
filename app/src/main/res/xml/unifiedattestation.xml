@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<backends>
-    <backend url="http://localhost:3001" />
-</backends>
