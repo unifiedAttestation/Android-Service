@@ -74,14 +74,12 @@ public class UnifiedAttestationService extends Service {
                             alias,
                             requestHashBytes
                     );
-                    org.json.JSONObject meta = buildDeviceMeta();
-                    Log.i("UAService", "deviceMeta=" + meta.toString());
                     String token = UaHttp.postDeviceProcess(
                             entry.url,
                             projectId,
                             requestHash,
                             chain,
-                            meta
+                            buildDeviceMeta()
                     );
                     safeSuccess(callback, token);
                 } catch (Exception e) {
@@ -122,14 +120,12 @@ public class UnifiedAttestationService extends Service {
                         safeError(callback, ERROR_ATTESTATION_FAILED, "Missing attestation chain");
                         return;
                     }
-                    org.json.JSONObject meta = buildDeviceMeta();
-                    Log.i("UAService", "deviceMeta=" + meta.toString());
                     String token = UaHttp.postDeviceProcess(
                             entry.url,
                             projectId,
                             requestHash,
                             attestationChain,
-                            meta
+                            buildDeviceMeta()
                     );
                     safeSuccess(callback, token);
                 } catch (Exception e) {
