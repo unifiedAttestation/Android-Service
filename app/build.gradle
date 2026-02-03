@@ -53,8 +53,7 @@ android {
         if (variant.buildType.name == "release") {
             variant.outputs.all { output ->
                 def vName = variant.versionName ?: "0.0.0"
-                def vCode = variant.versionCode ?: 0
-                outputFileName = "ua-android-service-${vName}(${vCode}).apk"
+                outputFileName = "ua-android-service-${vName}.apk"
             }
         }
     }
